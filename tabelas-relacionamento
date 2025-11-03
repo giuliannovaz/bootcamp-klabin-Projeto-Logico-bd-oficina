@@ -1,0 +1,6 @@
+Tabela,Atributos,Chave Primária (PK),Chaves Estrangeiras (FK),Observações
+ORDEM_SERVICO,"idOS (INT), NumeroOS (INT), DataEmissao (DATE), DataConclusao (DATE), Status (ENUM), ValorTotal (DECIMAL), idVeiculo (INT)",idOS,idVeiculo (FK ref. VEICULO),Entidade central. NumeroOS UNIQUE.
+OS_SERVICO,"idOS (INT), idServico (INT)","Composta: idOS, idServico","idOS (FK ref. OS), idServico (FK ref. SERVICO)",Serviços realizados na OS (N:M).
+OS_PECA,"idOS (INT), idRefPeca (INT), Quantidade (INT)","Composta: idOS, idRefPeca","idOS (FK ref. OS), idRefPeca (FK ref. PECA)",Peças usadas na OS (N:M).
+OS_MECANICO,"idOS (INT), idMecanico (INT), DataAtribuicao (DATE), HorasTrabalhadas (DECIMAL)","Composta: idOS, idMecanico","idOS (FK ref. OS), idMecanico (FK ref. MECANICO)",Relação N:M (Mecânicos alocados na OS).
+PAGAMENTO,"idPagamento (INT), idOS (INT), TipoPagamento (ENUM), ValorPago (DECIMAL), DataPagamento (DATE)",idPagamento,idOS (FK ref. OS),Detalhes do pagamento da OS.
