@@ -1,0 +1,6 @@
+Tabela,Atributos,Chave Primária (PK),Chaves Estrangeiras (FK),Constraints
+CLIENTE,"idCliente (INT), Nome (VARCHAR), CPF (CHAR(11)), Endereco (VARCHAR), Telefone (VARCHAR)",idCliente,,"CPF UNIQUE, Nome NOT NULL"
+VEICULO,"idVeiculo (INT), Placa (CHAR(7)), Marca (VARCHAR), Modelo (VARCHAR), Ano (INT), idCliente (INT)",idVeiculo,idCliente (FK ref. CLIENTE),"Placa UNIQUE, Placa NOT NULL"
+MECANICO,"idMecanico (INT), Nome (VARCHAR), Especialidade (VARCHAR), Endereco (VARCHAR), Codigo (VARCHAR)",idMecanico,,"Codigo UNIQUE, Nome NOT NULL"
+PECA,"idRefPeca (INT), Descricao (VARCHAR), ValorUnitario (DECIMAL), QuantidadeEstoque (INT)",idRefPeca,,"Descricao UNIQUE, ValorUnitario NOT NULL"
+SERVICO,"idServico (INT), NomeServico (VARCHAR), ValorMaoObra (DECIMAL), Descricao (VARCHAR)",idServico,,"NomeServico UNIQUE, ValorMaoObra NOT NULL"
